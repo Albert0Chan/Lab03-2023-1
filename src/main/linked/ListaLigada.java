@@ -12,8 +12,15 @@ public class ListaLigada implements EstruturaElementar{
 
     @Override
     public boolean buscaElemento(int valor) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'buscaElemento'");
+        if(this.cabeca.getValor() == valor){
+            return true; 
+        }else{
+            if(this.cabeca.getValor() != valor){
+                No n = new No(valor);
+                n.getValor() = proximo;
+            }
+        }
+            
     }
 
     @Override
@@ -60,8 +67,13 @@ public class ListaLigada implements EstruturaElementar{
 
     @Override
     public void insereInicio(int valor) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'insereInicio'");
+        if(this.cabeca == null){
+            this.cabeca = new No(valor);
+        }else{
+            No n = new No(valor);
+            n.setProximo(this.cabeca);
+            this.cabeca = n;
+        }
     }
 
     @Override
